@@ -1,0 +1,5 @@
+<form [formGroup]="loginForm" (ngSubmit)="validarCredenciales()">
+  <input type="text" name="username" formControlName="username" />
+  <input type="text" name="password" formControlName="password" />
+  <input type="submit" value="validar" />
+</form>
