@@ -1,0 +1,11 @@
+
+.alert {
+    &-danger {
+        background: rgba(210, 18, 18, 0.5);
+        padding: 1rem;
+        border-radius: 5px;
+        span{
+            color: white;
+        }
+    }
+}

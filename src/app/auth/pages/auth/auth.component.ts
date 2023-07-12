@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { loginStart } from '../../state/auth.action';
 
@@ -12,22 +11,13 @@ import { loginStart } from '../../state/auth.action';
   imports: [ReactiveFormsModule],
 })
 export class AuthComponent {
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private store: Store
-  ) {}
+  constructor(private fb: FormBuilder, private store: Store) {}
   loginForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
   });
 
   validarCredenciales(): void {
-    const a = this.store.dispatch(
-      loginStart({ credentials: this.loginForm.value })
-    );
-    console.log(a);
-
-    this.router.navigate(['dashboard/main']);
+    this.store.dispatch(loginStart({ credentials: this.loginForm.value }));
   }
 }
