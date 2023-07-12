@@ -18,11 +18,13 @@ export const authGuard: CanActivateChildFn = (
 ) => {
   const router = inject(Router);
   const uuidExist = localStorage.getItem('UUID');
-  if (uuidExist) {
-    const store = inject(Store);
-    store.dispatch(loadFromLocalStorageSuccess());
-    router.navigate(['dashboard/main']);
-    return false;
+
+  console.log('entro auth');
+
+  if (!uuidExist) {
+    return true;
   }
+
+  router.navigate(['dashboard/main']);
   return true;
 };
