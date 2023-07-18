@@ -1,5 +1,41 @@
 <form [formGroup]="loginForm" (ngSubmit)="validarCredenciales()">
-  <input type="text" name="username" formControlName="username" />
-  <input type="text" name="password" formControlName="password" />
-  <input type="submit" value="validar" />
+  <div class="input-group mb-3">
+    <span class="input-group-text">
+      <svg class="icon">
+        <use
+          xlink:href="./assets/vendors/@coreui/icons/svg/free.svg#cil-user"
+        ></use>
+      </svg>
+    </span>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Username"
+      formControlName="username"
+    />
+  </div>
+  <div class="input-group mb-4">
+    <span class="input-group-text">
+      <svg class="icon">
+        <use
+          xlink:href="./assets/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"
+        ></use>
+      </svg>
+    </span>
+    <input
+      class="form-control"
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6 text-center">
+      <input
+        class="btn btn-primary px-4"
+        type="submit"
+        value="Iniciar sesión"
+      />
+    </div>
+  </div>
 </form>
