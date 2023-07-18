@@ -15,9 +15,13 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { appReducer } from './store/app.state';
 import { SessionComponent } from './components/templates/session/session.component';
 import { LoginComponent } from './components/templates/login/login.component';
+import { NavigationComponent } from './components/templates/session/navigation/navigation.component';
+import { NavHeaderComponent } from './components/templates/session/nav-header/nav-header.component';
+import { FooterComponent } from './components/templates/session/footer/footer.component';
+import { BreadcumbComponent } from './components/templates/session/breadcumb/breadcumb.component';
 
 @NgModule({
-  declarations: [AppComponent, LoaderComponent, SessionComponent, LoginComponent],
+  declarations: [AppComponent, LoaderComponent, SessionComponent, LoginComponent, NavigationComponent, NavHeaderComponent, FooterComponent, BreadcumbComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
