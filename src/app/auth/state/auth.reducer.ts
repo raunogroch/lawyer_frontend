@@ -1,6 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
 import { initialState } from './auth.state';
-import { loadFromLocalStorage, loginSuccess } from './auth.action';
+import {
+  loadFromLocalStorage,
+  loginSuccess,
+  logoutSession,
+} from './auth.action';
 
 const _authReducer = createReducer(
   initialState,
@@ -13,6 +17,9 @@ const _authReducer = createReducer(
   }),
   on(loadFromLocalStorage, (state, action) => {
     return { ...state, user: action.user };
+  }),
+  on(logoutSession, (state) => {
+    return { ...state, initialState };
   })
 );
 

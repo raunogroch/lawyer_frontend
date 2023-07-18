@@ -8,6 +8,7 @@ export const LOGIN_FAIL = '[Auth Page] login fail';
 export const LOAD_FROM_LOCALSTORAGE = '[Storage] Load From LocalStorage';
 export const LOAD_FROM_LOCALSTORAGE_SUCCESS =
   '[Storage] Load From LocalStorage Success';
+export const LOGOUT_START = '[Auth Page] Logout start';
 
 export const loginStart = createAction(
   LOGIN_START,
@@ -27,3 +28,5 @@ export const loadFromLocalStorage = createAction(
 export const loadFromLocalStorageSuccess = createAction(
   LOAD_FROM_LOCALSTORAGE_SUCCESS
 );
+
+export const logoutSession = createAction(LOGOUT_START);

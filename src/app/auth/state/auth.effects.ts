@@ -5,6 +5,7 @@ import {
   loadFromLocalStorageSuccess,
   loginStart,
   loginSuccess,
+  logoutSession,
 } from './auth.action';
 import {
   catchError,
@@ -81,6 +82,19 @@ export class AuthEffects {
           }
         })
       ),
+    { dispatch: false }
+  );
+
+  logout$ = createEffect(
+    () => {
+      return this.actions$.pipe(
+        ofType(logoutSession),
+        map((action) => {
+          localStorage.removeItem('UUID');
+          this.router.navigate(['auth/login']);
+        })
+      );
+    },
     { dispatch: false }
   );
 }
