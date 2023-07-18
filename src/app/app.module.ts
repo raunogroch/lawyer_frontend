@@ -13,9 +13,11 @@ import { AuthEffects } from './auth/state/auth.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LoaderComponent } from './components/loader/loader.component';
 import { appReducer } from './store/app.state';
+import { SessionComponent } from './components/templates/session/session.component';
+import { LoginComponent } from './components/templates/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, LoaderComponent],
+  declarations: [AppComponent, LoaderComponent, SessionComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
